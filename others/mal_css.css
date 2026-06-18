@@ -1,0 +1,175 @@
+/*Theme color*/
+
+:root {
+
+	/* "accent" changes the majority of text and items
+	valid options: any colour */
+	--accent: #663300 ;
+	
+	/* "accent-hover" is used when you hover your mouse on an object
+	valid options: any colour */
+	--accent-hover: #cc6600 ;
+	
+	/* "accent-dim" is used for large blocks of colour, i.e. the category bar/footer
+	valid options: any colour */
+	--accent-dim: #e67300 ;
+	
+	/* "contrast" is used for any text on top of an accent colour
+	valid options: any colour */
+	--contrast: #fff ;
+	
+	/* "background-bar" toggles the bar of colour in the background.
+	valid options: visible / hidden */
+	--background-bar: hidden ;
+	
+	/* "cover-image" toggles the custom MAL banner. This requires the default cover image in your theme settings to be disabled!
+	valid options: block / none */
+	--cover-image: none ;
+	
+	}
+	
+	
+	
+	/*==============================*\
+	|        Theme  Internals        |
+	\* - - - - advanced css - - - - */
+	body {
+		background-size: cover !important;
+	}
+	
+	body:before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 178px;
+		background: var(--accent-dim);
+		visibility: var(--background-bar);
+	}
+	
+	.cover-block:before {
+		content: "";
+		display: var(--cover-image);
+		width: 1024px;
+		height: 280px;
+		background: var(--accent-dim) url(https://i.imgur.com/ERzN1Gs.png);
+		margin-top: 16px;
+	}
+	
+	.list-unit .list-status-title,
+	.list-unit .list-stats {
+		background-color: var(--accent-dim);
+	}
+	
+	.status-menu-container .status-menu .status-button::after,
+	#advanced-options .advanced-options-button a {
+		background-color: var(--accent);
+	}
+	
+	.list-menu-float .icon-menu:not(.profile):hover,
+	.list-menu-float .icon-menu.setting:hover .text .link-list-setting,
+	.list-menu-float .icon-menu.setting:hover .text .link-style-setting,
+	#footer-block {
+		background-color: var(--accent);
+	}
+	
+	#advanced-options .advanced-options-button a {
+		color: #fff;
+		opacity: 1;
+	} #advanced-options .advanced-options-button a:hover {
+		opacity: 0.8;
+	}
+	
+	#advanced-options .sort-widget input[type=radio]:checked + label {
+		background: var(--accent);
+		border-color: var(--accent);
+	}
+	
+	.list-menu-float .icon-menu svg.icon {
+		fill: var(--accent);
+	} .list-menu-float .icon-menu:hover svg.icon {
+		fill: var(--accent-hover);
+	}
+	
+	#search-button,
+	.header-title .link,
+	.list-table .list-table-data .data a,
+	.more-info a {
+		color: var(--accent) !important;
+	}
+	
+	#search-button:hover,
+	.header-title .link:hover,
+	.list-table .list-table-data a:not(.edit-disabled):hover,
+	.more-info a:hover {
+		color: var(--accent-hover) !important;
+	}
+	
+	.status-menu-container .status-menu .status-button {
+		color: var(--accent);
+	} .status-menu-container .status-menu .status-button:hover,
+	.status-menu-container .status-menu .status-button.on {
+		color: var(--accent-hover);
+	}
+	
+	.list-unit .list-status-title .text,
+	#copyright {
+		color: var(--contrast);
+	}
+	
+	/* Fix for edit button */
+	.list-table .list-table-data .tags .edit {
+		color: #009933 !important;
+	}
+	
+	.list-table .list-table-data .tags .edit:hover {
+		color: #00cc44 !important;
+	}
+	
+	/* Fix for certain themes changing text colour on list dropdown */
+	.header .header-menu .list-menu {
+		border-color: #444;
+	}
+	
+	.header .header-menu .list-menu .icon-menu {
+		background: #222;
+		color: #fff;
+	} .header .header-menu .list-menu .icon-menu:hover {
+		background: #333;
+	}
+	
+	.header .header-menu .list-menu .icon-menu svg.icon {
+		fill: #fff;
+	}
+	
+	/*Header*/
+	.header {
+	  margin-top: 125px;
+	}
+	
+	/*list opacity*/
+	.list-container {
+	  margin-top: 125px;
+	  background: rgba(242, 242, 242,.8);
+	  border: 0;
+	}
+	
+	.list-table > tbody:nth-of-type(2n+1) {
+		background-color: rgba(255,255,255,0);
+	}
+	
+	
+	/* White highlight with black font on Hover */
+	.list-table-data:hover td {
+	color: black !important;
+	background-color: white !important;
+	opacity: 1 !important;
+	-moz-transition: .4s ease;
+	-webkit-transition: .4s ease;
+	-o-transition: .4s ease;
+	}
+	
+	.list-table .list-table-data:hover a{
+	color: black !important;
+	}
